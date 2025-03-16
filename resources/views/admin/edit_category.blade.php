@@ -2,6 +2,25 @@
 <html>
   <head> 
     @include('admin.css')
+
+    <style type=text/css>
+
+        .div_deg
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 60px;
+        }
+
+        input[type='text']
+        {
+            width: 400px;
+            height: 50px;
+        }
+
+    </style>
+
   </head>
   <body>
     @include('admin.header')
@@ -12,8 +31,22 @@
       <div class="page-content">
         <div class="page-header">
           <div class="container-fluid">
+
+            <h1 style="color:white;">Edit category</h1>
+
+           <div class="div_deg">
             
-              @include('admin.body')
+
+           <form action="{{ url('update_category',$data->id) }}" method="post">
+            @csrf
+            
+            <input type="text" name="category" value={{ $data->Category_name }}>
+            <input class="btn btn-primary" type="submit" value="Update Category">
+
+           </form>
+
+           </div>
+
 
           </div>
       </div>
