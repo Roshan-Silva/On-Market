@@ -125,4 +125,10 @@ class AdminController extends Controller
 
         return redirect('/view_products');
     }
+
+    public function search_product(Request $request){
+        $search = $request->search;
+        $data = Product::where('title','LIKE','%'.$search.'%')->orWhere('category','LIKE','%'.$search.'%')->paginate(3);
+        return view('admin.view_products',compact('data'));
+    }
 }
