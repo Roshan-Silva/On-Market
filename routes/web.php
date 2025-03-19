@@ -64,3 +64,5 @@ Route::post('update_product/{id}',[AdminController::class, 'update_product'])->m
 Route::get('search_product',[AdminController::class, 'search_product'])->middleware(['auth','admin']);
 
 Route::get('product_details/{id}', [HomeController::class,'product_details']);
+
+Route::get('add_to_cart/{id}', [HomeController::class,'add_to_cart'])->middleware(['auth', 'verified']);
