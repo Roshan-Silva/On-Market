@@ -78,4 +78,11 @@ class HomeController extends Controller
         }
         return view('home.mycart',compact('count','cart'));
     }
+
+    public function remove_product($id){
+        $data = Cart::find($id);
+        $data->delete();
+        toastr()->timeOut(10000)->closeButton()->addWarning('Product removed from cart successfully');
+        return redirect()->back();
+    }
 }

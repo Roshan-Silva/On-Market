@@ -43,6 +43,7 @@
                 <th>Product Title</th>
                 <th>Price</th>
                 <th>Image</th>
+                <th>Remove</th>
             </tr>
             @foreach ($cart as $cart)
                 
@@ -52,6 +53,8 @@
                 <td>
                     <img width="150" src="/products/{{$cart->product->image}}">
                 </td>
+                <td>
+                    <a class="btn btn-danger" href="{{url('remove_product', $cart->id)}}">Remove</a>
             </tr>
 
             @endforeach
