@@ -73,3 +73,7 @@ Route::get('remove_product/{id}', [HomeController::class,'remove_product'])->mid
 Route::post('place_order', [HomeController::class,'place_order'])->middleware(['auth', 'verified']);
 
 Route::get('view_orders',[AdminController::class, 'view_orders'])->middleware(['auth','admin']);
+
+Route::get('on_the_way/{id}',[AdminController::class, 'on_the_way'])->middleware(['auth','admin']);
+
+Route::get('delivered/{id}',[AdminController::class, 'delivered'])->middleware(['auth','admin']);
