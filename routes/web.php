@@ -22,10 +22,9 @@ use App\Models\Product;
 
 Route::get('/', [HomeController::class,'home']);
 
-Route::get('/dashboard', function () {
-    $product = Product::all();
-    return view('home.index',compact('product'));
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class,'login_home'])->middleware(['auth', 'verified'])->name('dashboard');
+    
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
