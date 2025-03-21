@@ -69,24 +69,4 @@
             </body>
             
             </html>
-            <th>Product Title</th>
-            <th>Price</th>
-            <th>Image</th>
-        </tr>
-        
-        
-    @foreach ($order as $orders)
-        <tr>
-        <td>{{ $orders->name }}</td>
-        <td>{{ $orders->rec_address }}</td>
-        <td>{{ $orders->phone }}</td>
-        <td>{{ $orders->product->title }}</td>
-        <td>{{ $orders->product->price }}</td>
-        
-        <td><img src="{{ asset('products/'.$orders->product->image) }}" alt=""></td>
-    
-        </tr>
-    @endforeach
-    </table>
-</body>
-</html>
+            <
