@@ -38,6 +38,8 @@
           @if (Route::has('login'))
             @auth
 
+            <a href="{{ url('my_orders') }}">My Orders</a>
+
             <a href="{{ url('mycart') }}">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
               [{{ $count }}]
