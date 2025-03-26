@@ -34,6 +34,8 @@
 
                         <h3 class="panel-title" >Payment Details</h3>
 
+                        <h4>You need to pay {{$value}}</h4>
+
                 </div>
 
                 <div class="panel-body">
@@ -58,7 +60,7 @@
 
                             role="form" 
 
-                            action="{{ route('stripe.post') }}" 
+                            action="{{ route('stripe.post',$value) }}" 
 
                             method="post" 
 
@@ -158,7 +160,7 @@
 
                             <div class="col-xs-12">
 
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now</button>
 
                             </div>
 
