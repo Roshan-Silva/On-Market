@@ -131,17 +131,17 @@ class HomeController extends Controller
         
     }
 
-    public function stripe()
+    public function stripe($value)
     {
-        return view('home.stripe');
+        return view('home.stripe',compact('value'));
     }
 
-    public function stripePost(Request $request)
+    public function stripePost(Request $request,$value)
     {
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
 
-                "amount" => 100 * 100,
+                "amount" => $value * 100,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
                 "description" => "Test payment from itsolutionstuff.com." 
