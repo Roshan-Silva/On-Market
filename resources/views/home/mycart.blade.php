@@ -57,30 +57,7 @@
     <!-- end header section -->
 
     <div class="div_deg">
-        <div class="form_div">
-            <form action="{{url('place_order')}}" method="post">
-                @csrf
-                <div class="div_gap">
-                    <label>Name:</label>
-                    <input type="text" name="name" value="{{Auth::user()->name}}">
-                </div>
-                <div class="div_gap">
-                    <label>Address:</label>
-                    <textarea name="address">{{Auth::user()->address}}</textarea>
-                </div>
-                <div class="div_gap">
-                    <label>Phone:</label>
-                    <input type="text" name="phone" value="{{Auth::user()->phone}}">
-                </div>
-                <div class="div_gap">
-                    <input class="btn btn-primary" type="submit" value="Cash on Delivery">
-                    <a href="{{ url('stripe') }}" class="btn btn-success">Pay Using card</a>
-                </div>
-                <div>
-                    
-                </div>
-            </form>
-        </div>
+       
     
         <table>
             <tr>
@@ -117,6 +94,31 @@
 
     <div class="cart_value">
         <h3>Total Price is : ${{$value}}</h3>
+    </div>
+
+    <div class="form_div" style="align-content: center; display: flex; justify-content: center;">
+        <form action="{{url('place_order')}}" method="post">
+            @csrf
+            <div class="div_gap">
+                <label>Name:</label>
+                <input type="text" name="name" value="{{Auth::user()->name}}">
+            </div>
+            <div class="div_gap">
+                <label>Address:</label>
+                <textarea name="address">{{Auth::user()->address}}</textarea>
+            </div>
+            <div class="div_gap">
+                <label>Phone:</label>
+                <input type="text" name="phone" value="{{Auth::user()->phone}}">
+            </div>
+            <div class="div_gap">
+                <input class="btn btn-primary" type="submit" value="Cash on Delivery">
+                <a href="{{ url('stripe',$value) }}" class="btn btn-success">Pay Using card</a>
+            </div>
+            <div>
+                
+            </div>
+        </form>
     </div>
 
 
