@@ -84,7 +84,7 @@ Route::get('my_orders', [HomeController::class,'my_orders'])->middleware(['auth'
 
 Route::controller(HomeController::class)->group(function(){
 
-    Route::get('stripe', 'stripe');
-    Route::post('stripe', 'stripePost')->name('stripe.post');
+    Route::get('stripe/{value}', 'stripe');
+    Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
 
 });
