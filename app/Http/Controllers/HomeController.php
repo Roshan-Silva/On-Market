@@ -148,8 +148,31 @@ class HomeController extends Controller
 
         ]);
 
-        Session::flash('success', 'Payment successful!');
-        return back();
+        $name = Auth::User()->name;
+        $address = Auth::User()->address;
+        $phone = Auth::User()->phone;
+        $user_id = Auth::id();
+        $cart = Cart::where('user_id',$user_id)->get();
+
+        foreach($cart as $carts){
+            $order = new Order();
+            $order->name = $name;
+            $order->rec_address = $address;
+            $order->phone = $phone;
+            $order->user_id = $user_id;
+            $order->product_id = $carts->product_id;
+            $order->payment_status = 'paid';
+            $order->save();
+            
+        }
+        $cart_remove = Cart::where('user_id',$user_id)->get();
+        foreach($cart_remove as $remove){
+            $data = Cart::find($remove->id);
+            $data->delete();
+
+        }
+        toastr()->timeOut(10000)->closeButton()->addSuccess('Product ordered successfully');
+        return redirect('mycart');
     }
 
 
