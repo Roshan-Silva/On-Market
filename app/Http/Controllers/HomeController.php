@@ -172,7 +172,7 @@ class HomeController extends Controller
 
         }
         toastr()->timeOut(10000)->closeButton()->addSuccess('Product ordered successfully');
-        return redirect('mycart');
+        // return redirect('mycart');
     }
 
 
