@@ -48,7 +48,7 @@
                 </span>
               </h6>
               <h6>
-                {{-- Avalble Quantity :
+                Avalble Quantity :
                 <span>
                   {{ $data->quantity }}
                 </span>
@@ -62,7 +62,7 @@
                   {{ $data->description }}
                 </p>
               </h6>
-            </div> --}}
+            </div>
 
                 
                 
