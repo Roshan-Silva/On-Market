@@ -1,8 +1,16 @@
 <header class="header_section">
     <nav class="navbar navbar-expand-lg custom_nav-container ">
-      <a class="navbar-brand" href="index.html">
+      <a style="font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin: 30px 0;" href="index.html">
         <span>
-          Giftos
+          On Market
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
