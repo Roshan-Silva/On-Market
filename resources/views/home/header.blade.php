@@ -1,44 +1,55 @@
 <header class="header_section">
-    <nav class="navbar navbar-expand-lg custom_nav-container ">
-      <a style="font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-align: center;
-  margin: 30px 0;" href="index.html">
-        <span>
-          On Market
-        </span>
-      </a>
+    
+  <nav class="navbar navbar-expand-lg custom_nav-container ">
+    <a href="index.html" style="
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 5px 0;
+">
+  <span style="
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-right: 8px;
+  ">On Market</span>
+</a>
+      
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class=""></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  ">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/dashboard') }}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.html">
+            <a class="nav-link" href="{{ url('shop') }}">
               Shop
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="why.html">
+            <a class="nav-link" href="{{ url('why') }}">
               Why Us
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="testimonial.html">
+            <a class="nav-link" href="{{ url('testimonial') }}">
               Testimonial
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="{{ url('contact_us') }}">Contact Us</a>
           </li>
         </ul>
         <div class="user_option">
@@ -78,4 +89,5 @@
         </div>
       </div>
     </nav>
+    <br>
   </header>
