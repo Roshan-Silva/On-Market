@@ -21,7 +21,7 @@
                   {{ $products->title }}
                 </h6>
                 <h6>
-                  Price
+                  
                   <span>
                     ${{ $products->price }}
                   </span>
