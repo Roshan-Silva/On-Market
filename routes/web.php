@@ -88,3 +88,11 @@ Route::controller(HomeController::class)->group(function(){
     Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
 
 });
+
+Route::get('shop', [HomeController::class,'shop'])->middleware(['auth', 'verified']);
+
+Route::get('contact_us', [HomeController::class,'contact_us'])->middleware(['auth', 'verified']);
+
+Route::get('why', [HomeController::class,'why'])->middleware(['auth', 'verified']);
+
+Route::get('testimonial', [HomeController::class,'testimonial'])->middleware(['auth', 'verified']);
