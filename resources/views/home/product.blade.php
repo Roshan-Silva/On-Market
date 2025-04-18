@@ -28,10 +28,10 @@
                 </h6>
                 
               </div>
-              {{-- <div style="display: flex; justify-content: space-between; padding: 0 10px;">
+              <div style="display: flex; justify-content: space-between; padding: 0 10px;">
                 <a class="btn btn-danger" href="{{ url('product_details', $products->id )}}">Details</a>
                 <a class="btn btn-primary" href="{{ url('add_to_cart', $products->id )}}">Add to Cart</a>
-              </div> --}}
+              </div>
               
 
               
