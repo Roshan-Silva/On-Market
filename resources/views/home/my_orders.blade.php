@@ -126,10 +126,10 @@
             <div class="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
                 <p class="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800">Customer’s Cart</p>
                 <div class="mt-4 md:mt-6 flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
-                  @foreach($orders->product as $product)
+                  @foreach($orders->products as $product)
                     <div class="pb-4 md:pb-8 w-full md:w-40">
-                        <img class="w-full hidden md:block" src="{{ asset('products/'.$orders->product->image) }}" alt="dress" />
-                        <img class="w-full md:hidden" src="{{ asset('products/'.$orders->product->image) }}" alt="dress" />
+                        <img class="w-full hidden md:block" src="{{ asset('products/'.$product->image) }}" alt="dress" />
+                        <img class="w-full md:hidden" src="{{ asset('products/'.$product->image) }}" alt="dress" />
                     </div>
                   @endforeach
                     <div class="border-b border-gray-200 md:flex-row flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">

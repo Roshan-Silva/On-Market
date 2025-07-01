@@ -94,32 +94,36 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    public function place_order(Request $request){
-        $name = $request->name;
-        $address = $request->address;
-        $phone = $request->phone;
+    public function place_order(Request $request)
+    {
         $user_id = Auth::id();
-        $cart = Cart::where('user_id',$user_id)->get();
+        $cartItems = Cart::where('user_id', $user_id)->get();
 
-        foreach($cart as $carts){
-            $order = new Order();
-            $order->name = $name;
-            $order->rec_address = $address;
-            $order->phone = $phone;
-            $order->user_id = $user_id;
-            $order->product_id = $carts->product_id;
-            $order->save();
-            
+        if ($cartItems->isEmpty()) {
+            toastr()->error('Your cart is empty!');
+            return redirect()->back();
         }
-        $cart_remove = Cart::where('user_id',$user_id)->get();
-        foreach($cart_remove as $remove){
-            $data = Cart::find($remove->id);
-            $data->delete();
 
+        // Step 1: Create ONE order
+        $order = new Order();
+        $order->name = $request->name;
+        $order->rec_address = $request->address;
+        $order->phone = $request->phone;
+        $order->user_id = $user_id;
+        $order->save();
+
+        // Step 2: Attach all products to the order
+        foreach ($cartItems as $item) {
+            $order->products()->attach($item->product_id, [
+                'quantity' => $item->quantity // assuming 'quantity' is stored in the cart
+            ]);
         }
-        toastr()->timeOut(10000)->closeButton()->addSuccess('Product ordered successfully');
+
+        // Step 3: Clear cart
+        Cart::where('user_id', $user_id)->delete();
+
+        toastr()->timeOut(10000)->closeButton()->addSuccess('Order placed successfully!');
         return redirect()->back();
-        
     }
 
     public function my_orders(){
