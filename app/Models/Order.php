@@ -17,4 +17,8 @@ class Order extends Model
     {
         return $this->hasOne('App\Models\Product','id','product_id');
     }
+    public function orders()
+    {
+        return $this->belongsToMany(Product::class)->withPivot('price')->withTimestamps();
+    }
 }
