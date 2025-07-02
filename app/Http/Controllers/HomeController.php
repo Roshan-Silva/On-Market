@@ -104,12 +104,19 @@ class HomeController extends Controller
             return redirect()->back();
         }
 
+        // Calculate total value from cart items
+        $value = 0;
+        foreach ($cartItems as $item) {
+            $value += $item->product->price; // assuming each product has a 'price' attribute
+        }
+
         // Step 1: Create ONE order
         $order = new Order();
         $order->name = $request->name;
         $order->rec_address = $request->address;
         $order->phone = $request->phone;
         $order->user_id = $user_id;
+        $order->total = $value; // assuming $value is the total amount
         $order->save();
 
         // Step 2: Attach all products to the order
@@ -117,13 +124,14 @@ class HomeController extends Controller
             $order->products()->attach($item->product_id, [
                 'quantity' => $item->quantity // assuming 'quantity' is stored in the cart
             ]);
+            
         }
 
         // Step 3: Clear cart
         Cart::where('user_id', $user_id)->delete();
 
         toastr()->timeOut(10000)->closeButton()->addSuccess('Order placed successfully!');
-        return redirect()->back();
+        return redirect('my_orders');
     }
 
     public function my_orders(){

@@ -113,18 +113,18 @@
     </tr>
   @endforeach
   </table> --}}
-  @foreach ($order as $orders)
+ @foreach ($order->sortByDesc('created_at') as $orders)
     
   
   <div class="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
     <div class="flex justify-start item-start space-y-2 flex-col">
         <h1 class="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Order {{$orders->id}}</h1>
-        <p class="text-base dark:text-gray-300 font-medium leading-6 text-gray-600">21st Mart 2021 at 10:34 PM</p>
+        <p class="text-base dark:text-gray-300 font-medium leading-6 text-gray-600">{{ $orders->updated_at }}</p>
     </div> 
     <div class="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
         <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
-            <div class="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
-                <p class="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800">Customer’s Cart</p>
+            <div class="flex flex-col justify-start items-start dark:bg-gray-1000 bg-gray-200 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
+                <p class="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800">{{ $orders->name }}’s products</p>
                 <div class="mt-4 md:mt-6 flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
                   @foreach($orders->products as $product)
                     <div class="pb-4 md:pb-8 w-full md:w-40">
@@ -134,17 +134,17 @@
                   @endforeach
                     <div class="border-b border-gray-200 md:flex-row flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
                         <div class="w-full flex flex-col justify-start items-start space-y-8">
-                            <h3 class="text-xl dark:text-white xl:text-2xl font-semibold leading-6 text-gray-800">Premium Quaility Dress</h3>
+                            {{-- <h5 class="text-xl dark:text-white xl:text-2xl font-semibold leading-6 text-gray-800">Premium Quaility Dress</h5> --}}
                             <div class="flex justify-start items-start flex-col space-y-2">
-                                <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-400 text-gray-300">Style: </span> Italic Minimal Design</p>
-                                <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-400 text-gray-300">Size: </span> Small</p>
-                                <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-400 text-gray-300">Color: </span> Light Blue</p>
+                                <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-800 text-gray-800 font-bold">Ship to: </span> {{$orders->rec_address}}</p>
+                                <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-800 text-gray-800 font-bold">Order status: </span>{{$orders->status}} </p>
+                                <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-800 text-gray-800 font-bold">Payment method: </span>{{$orders->payment_status}} </p>
                             </div>
                         </div>
-                        <div class="flex justify-between space-x-8 items-start w-full">
-                            <p class="text-base dark:text-white xl:text-lg leading-6">{{$orders->price}} <span class="text-base dark:text-white xl:text-lg leading-6"> {{$orders->status}}</span></p>
-                            <p class="text-base dark:text-white xl:text-lg leading-6 text-gray-800">01</p>
-                            <p class="text-base dark:text-white xl:text-lg font-semibold leading-6 text-gray-800">{{$orders->price}}</p>
+                        <div class="flex justify-between space-x-6 items-start w-full">
+                            <p class="text-base dark:text-white xl:text-lg leading-6 font-bold">Total Price: <span class="text-base dark:text-white xl:text-lg leading-6"> {{$orders->total}}$</span></p>
+                            {{-- <p class="text-base dark:text-white xl:text-lg leading-6 text-gray-800">01</p>
+                            <p class="text-base dark:text-white xl:text-lg font-semibold leading-6 text-gray-800">{{$orders->total}}</p> --}}
                         </div>
                     </div>
                 </div>

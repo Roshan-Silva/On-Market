@@ -11,22 +11,36 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               @foreach ($product as $products)
                 <!-- Product Cards with Enhanced Design -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:-translate-y-2 hover:shadow-2xl">
-                    {{-- <img src="https://res.cloudinary.com/djv4xa6wu/image/upload/v1735722165/AbhirajK/Abhirajk.webp" 
-                        alt="Casual Wear" class="w-full h-64 object-cover"> --}}
-                    <img src="products/{{ $products->image }}" alt="image" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary-800 dark:text-white">{{ $products->title }}</h3>
-                        <div class="flex justify-between items-center mt-2">
-                            <p class="text-primary-600 font-bold">${{ $products->price }}</p>
-                            <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded-full text-xs">New</span>
-                        </div>
-                        <a class="mt-4 w-full bg-primary-500 text-white py-2 px-4 rounded-lg hover:bg-primary-600 transition-colors" href="{{ url('add_to_cart', $products->id )}}">
-                            {{-- <i class="fas fa-shopping-cart mr-2"></i> --}}
-                            Add to Cart
-                        </a>
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl relative text-sm">
+                  <!-- "New" badge -->
+                  <span class="absolute top-2 right-2 bg-primary-100 text-primary-800 text-[10px] font-medium px-2 py-0.5 rounded-full shadow">
+                    New
+                  </span>
+
+                  <!-- Image -->
+                  <div class="aspect-w-1 aspect-h-1">
+                    <img src="products/{{ $products->image }}" alt="image" class="w-full object-cover rounded-t-xl">
+                  </div>
+
+                  <!-- Product Info -->
+                  <div class="p-4">
+                    <div class="flex justify-between items-center">
+                      <h3 class="text-sm font-semibold text-primary-800 dark:text-white truncate w-2/3">{{ $products->title }}</h3>
+                      <p class="text-primary-600 font-bold text-sm w-1/3 text-right">${{ $products->price }}</p>
                     </div>
+
+                    <!-- Buttons -->
+                    <div class="mt-3 flex gap-2">
+                      <a href="{{ url('product_details', $products->id )}}" class="w-1/2 bg-gray-200 text-primary-700 hover:bg-gray-300 text-center py-1.5 px-2 rounded-md transition-all text-xs">
+                        See Details
+                      </a>
+                      <a href="{{ url('add_to_cart', $products->id )}}" class="w-1/2 bg-primary-500 hover:bg-primary-600 text-white text-center py-1.5 px-2 rounded-md transition-all shadow-sm hover:shadow-md text-xs">
+                        Add to Cart
+                      </a>
+                    </div>
+                  </div>
                 </div>
+
               @endforeach
             </div>
         </div>
