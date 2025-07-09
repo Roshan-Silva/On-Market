@@ -12,9 +12,15 @@
     <h3>Customer name : {{$data->name}}</h3>
     <h3>Customer address : {{$data->rec_address}}</h3>
     <h3>Customer phone : {{$data->phone}}</h3>
-    <h2>Product title : {{$data->product->title}}</h2>
-    <h2>Product price : {{$data->product->price}}</h2>
-    <img width="250" height="300" src="/products/{{ $data->product->image }}">
+    @foreach ($data->products as $product)
+        <h2>Product title : {{$product->title}}</h2>
+    @endforeach
+    
+    <h2>Product price : {{$data->total}}</h2>
+    @foreach ($data->products as $product)
+        <img width="250" height="300" src="/products/{{ $product->image }}">
+    @endforeach
+    
 
     </center>
 </body>

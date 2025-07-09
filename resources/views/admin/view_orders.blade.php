@@ -46,42 +46,57 @@
               <div class="table_center">
                 <table>
                     <tr>
-                        <th>Customrer Name</th>
+                        <th>Customer Name</th>
                         <th>Address</th>
                         <th>Phone</th>
-                        <th>Product Title</th>
-                        <th>Product Price</th>
-                        <th>Image</th>
+                        <th>Product Details</th>
+                        <th>Total Price</th>
                         <th>Status</th>
                         <th>Change Status</th>
-                        <th>Print pdf</th>
+                        <th>Print PDF</th>
                     </tr>
-                    @foreach($data as $data)
+
+                    @foreach($data as $order)
                     <tr>
-                        <td>{{$data->name}}</td>
-                        <td>{{$data->rec_address}}</td>
-                        <td>{{$data->phone}}</td>
-                        <td>{{$data->product->title}}</td>
-                        <td>{{$data->product->price}}</td>
-                        <td><img width="150" src="products/{{ $data->product->image }}"></td>
+                        <td>{{ $order->name }}</td>
+                        <td>{{ $order->rec_address }}</td>
+                        <td>{{ $order->phone }}</td>
+                        
                         <td>
-                            @if($data->status == 'in progress')
-                            <span style="color: red;">{{$data->status}}</span>
-                        @elseif($data->status == 'On the way')
-                            <span style="color: orange;">{{$data->status}}</span>
-                        @else
-                            <span style="color: green;">{{$data->status}}</span>
-                        @endif
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                                @foreach($order->products as $product)
+                                    <div style="border: 1px solid #ccc; padding: 10px; background-color: #2e3d49; border-radius: 5px;">
+                                        <div style="font-weight: bold; color: #fff;">{{ $product->title }}</div>
+                                        <img width="100" src="{{ asset('products/' . $product->image) }}" alt="{{ $product->title }}" style="margin-top: 5px;">
+                                    </div>
+                                @endforeach
+                            </div>
                         </td>
+
+
+                        <td>{{ $order->total }}$</td>
+
                         <td>
-                            <a class="btn btn-primary" href="{{ url('on_the_way',$data->id) }}">On the way</a>
-                            <a class="btn btn-success" href="{{ url('delivered',$data->id) }}">Delivered</a>
+                            @if($order->status == 'in progress')
+                                <span style="color: red;">{{ $order->status }}</span>
+                            @elseif($order->status == 'On the way')
+                                <span style="color: orange;">{{ $order->status }}</span>
+                            @else
+                                <span style="color: green;">{{ $order->status }}</span>
+                            @endif
                         </td>
+
                         <td>
-                            <a class="btn btn-info" href="{{ url('print_pdf',$data->id) }}">Print pdf</a>
+                            <a class="btn btn-primary btn-sm" href="{{ url('on_the_way', $order->id) }}">On the way</a><br><br>
+                            <a class="btn btn-success btn-sm" href="{{ url('delivered', $order->id) }}">Delivered</a>
+                        </td>
+
+                        <td>
+                            <a class="btn btn-info btn-sm" href="{{ url('print_pdf', $order->id) }}">Print PDF</a>
                         </td>
                     </tr>
                     @endforeach
+
                 </table>
               </div>
 
@@ -98,4 +113,4 @@
     <script src="{{asset('admincss/js/charts-home.js')}}"></script>
     <script src="{{asset('admincss/js/front.js')}}"></script>
   </body>
-</htmls
+</html>
