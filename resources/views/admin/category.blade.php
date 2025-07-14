@@ -60,10 +60,15 @@
 
             <div class = "div_deg">
 
-            <form action="{{ url('add_category') }}" method="post">
+            <form action="{{ url('add_category') }}" method="post" enctype="multipart/form-data">
                 @csrf
               <div>
-                <input type="text" name="category">
+                <input type="text" name="category" placeholder="Category Name">
+              </div><br>
+              <div>
+                <input type="file" name="image">
+              </div><br>
+              <div>
                 <input class="btn btn-primary" type="submit" value="Add category">
               </div>
             </form>
@@ -73,6 +78,7 @@
             <table class="table_deg">
                 <tr>
                     <th>Category</th>
+                    <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -80,6 +86,9 @@
                     
                 <tr>
                     <td>{{ $data->Category_name }}</td>
+                    <td>
+                      <img src="{{ asset('images/' . $data->image) }}" alt="Category Image" style="width: 100px; height: 100px;">
+                    </td>
                     <td><a class="btn btn-success" href="{{ url('edit_category',$data->id) }}">Edit</a>
                     <td><a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_category',$data->id)}}">Delete</a></td>
                 </tr>

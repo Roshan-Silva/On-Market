@@ -20,8 +20,17 @@ class AdminController extends Controller
 
     public function add_category(Request $request)
     {
+       $request->validate([
+        'category' => 'required|string|max:255',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+
        $category = new Category;
        $category->Category_name = $request->category;
+       $category->image = $imageName; // Save the image name to the database
        $category->save();
 
        toastr()->timeOut(10000)->closeButton()->addSuccess('Category added successfully');
@@ -45,8 +54,25 @@ class AdminController extends Controller
     }
 
     public function update_category(Request $request, $id){
+
+        $request->validate([
+            'category' => 'required|string|max:255',
+        ]);
+
         $data = Category::find($id);
         $data->Category_name = $request->category;
+
+            // If you want to update the image, you can add validation and logic here
+        if ($request->hasFile('image')) {
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $data->image = $imageName; // Update the image name
+        }
+        
         $data->save();
 
         toastr()->timeOut(10000)->closeButton()->addSuccess('Category updated successfully');

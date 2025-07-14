@@ -64,10 +64,10 @@
                         
                         <td>
                             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                                @foreach($order->products as $product)
+                                @foreach ($order->products as $product)
                                     <div style="border: 1px solid #ccc; padding: 10px; background-color: #2e3d49; border-radius: 5px;">
                                         <div style="font-weight: bold; color: #fff;">{{ $product->title }}</div>
-                                        <img width="100" src="{{ asset('products/' . $product->image) }}" alt="{{ $product->title }}" style="margin-top: 5px;">
+                                        <img width="100" src="{{ asset('products/' . $product->image) }}" alt="{{ $product->title }}">
                                     </div>
                                 @endforeach
                             </div>

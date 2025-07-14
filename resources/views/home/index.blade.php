@@ -63,7 +63,7 @@
 
   <!-- contact section -->
 
-        @include('home.contact')
+        @include('home.categories')
 
   <!-- end contact section -->
 

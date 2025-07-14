@@ -11,6 +11,7 @@ class Category extends Model
 
     protected $fillable = [
         'Category_name',
+        'image', // Ensure the image field is fillable
        
     ];
 

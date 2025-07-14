@@ -42,12 +42,12 @@
 
   <br><br><br> --}}
 
-  <header class="bg-gradient-to-r from-gray-600 to-gray-500 text-white">
+  {{-- <header class="bg-gradient-to-r from-gray-600 to-gray-500 text-white">
   <div class="max-w-4xl mx-auto px-4 py-20 text-center">
-    <h2 class="text-4xl sm:text-5xl font-bold mb-2">Contact Us</h2>
+    <h2 class="text-4xl sm:text-5xl font-bold mb-2">Contact Us</h2> --}}
     {{-- <p class="text-base sm:text-lg font-medium opacity-90">We’d love to hear from you. Let’s talk!</p> --}}
-  </div>
-</header>
+  {{-- </div>
+</header>  --}}
   <section class="text-center py-12 px-4">
     <h2 class="text-2xl font-bold">Get In Touch</h2>
     <p class="mt-4 text-gray-700 max-w-2xl mx-auto">We are here to help you. Reach out to us via any of the following methods.</p>

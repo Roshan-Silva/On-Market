@@ -37,10 +37,12 @@
            <div class="div_deg">
             
 
-           <form action="{{ url('update_category',$data->id) }}" method="post">
+           <form action="{{ url('update_category',$data->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             
             <input type="text" name="category" value={{ $data->Category_name }}>
+            <input type="file" name="image" class="form-control" style="color: white;">
+            <br>
             <input class="btn btn-primary" type="submit" value="Update Category">
 
            </form>

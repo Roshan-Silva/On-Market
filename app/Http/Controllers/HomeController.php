@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Category;
 use Illuminate\Support\Facades\Session;
 use Stripe;
 
@@ -25,6 +26,7 @@ class HomeController extends Controller
 
     public function home(){
         $product = Product::all();
+        $categories = Category::all();
         if(Auth::id()){
             $user = Auth::User();
             $userid = $user->id;
@@ -34,7 +36,7 @@ class HomeController extends Controller
             $count = "";
         }
         
-        return view ('home.index',compact('product','count'));
+        return view ('home.index',compact('product','count','categories'));
     }
 
     public function login_home(){
