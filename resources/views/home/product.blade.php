@@ -46,46 +46,6 @@
         </div>
       </div>
 
-
-      {{-- <div class="row">
-
-        @foreach ($product as $products)
-        
-
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            
-              <div class="img-box">
-                <img src="products/{{ $products->image }}" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  {{ $products->title }}
-                </h6>
-                <h6>
-                  
-                  <span>
-                    ${{ $products->price }}
-                  </span>
-                </h6>
-                
-              </div>
-              <div style="display: flex; justify-content: space-between; padding: 0 10px;">
-                <a class="btn btn-danger" href="{{ url('product_details', $products->id )}}">Details</a>
-                <a class="btn btn-primary" href="{{ url('add_to_cart', $products->id )}}">Add to Cart</a>
-              </div>
-              
-
-              
-           
-          </div>
-        </div>
-
-        @endforeach
-
-        
-
-      </div> --}}
       
     </div>
   </section>

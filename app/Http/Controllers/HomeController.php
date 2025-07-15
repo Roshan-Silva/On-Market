@@ -39,6 +39,21 @@ class HomeController extends Controller
         return view ('home.index',compact('product','count','categories'));
     }
 
+    public function category_products($id){
+        $categories = Category::find($id);
+        $category = $categories->Category_name;
+        $products = Product::where('category',$category)->get();
+        if(Auth::id()){
+            $user = Auth::User();
+            $userid = $user->id;
+            $count = Cart::where('user_id',$userid)->count();
+        }
+        else{
+            $count = "";
+        }
+        return view ('home.categorized_products',compact('products','count','category'));
+    }
+
     public function login_home(){
         $product = Product::all();
         if(Auth::id()){
