@@ -1,95 +1,4 @@
-{{-- <section class="info_section  layout_padding2-top">
-    <div class="social_container">
-      <div class="social_box">
-        <a href="">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              ABOUT US
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_form ">
-              <h5>
-                Newsletter
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              NEED HELP
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              CONTACT US
-            </h6>
-            <div class="info_link-box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+01 12345678901</span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> demo@gmail.com</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer section -->
-    <footer class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Web Tech Knowledge</a>
-        </p>
-      </div>
-    </footer>
-    <!-- footer section -->
 
-  </section>
-
-  <!-- end info section -->
-
-
-  <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <script src="{{asset('js/custom.js')}}"></script> --}}
 
   <footer class="bg-gray-900 text-white pt-12 pb-8">
   <div class="container mx-auto px-4">
@@ -100,11 +9,11 @@
           <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
-          <span class="ml-2 text-xl font-bold">Company</span>
+          <span class="ml-2 text-xl font-bold">OnMarket</span>
         </div>
-        <p class="text-gray-400">Building innovative solutions for the modern world.</p>
+        <p class="text-gray-400">Discover an extraordinary collection of handcrafted gifts that tell stories, create memories, and bring joy to every special moment.</p>
         <div class="flex space-x-4">
-          <a href="#" class="text-gray-400 hover:text-white transition">
+          <a href="Facebook/OnMarket" class="text-gray-400 hover:text-white transition">
             <span class="sr-only">Facebook</span>
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
@@ -135,11 +44,10 @@
       <div class="space-y-4">
         <h3 class="text-lg font-semibold">Quick Links</h3>
         <ul class="space-y-2">
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Pricing</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="/dashboard" class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="/why" class="text-gray-400 hover:text-white transition">Why Us</a></li>
+          <li><a href="/shop" class="text-gray-400 hover:text-white transition">Shop</a></li>
+          <li><a href="/contact_us" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
         </ul>
       </div>
 
@@ -147,11 +55,10 @@
       <div class="space-y-4">
         <h3 class="text-lg font-semibold">Services</h3>
         <ul class="space-y-2">
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile Apps</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Marketing</a></li>
-          <li><a href="#" class="text-gray-400 hover:text-white transition">Cloud Solutions</a></li>
+          <li><a href="" class="text-gray-400 hover:text-white transition">Latest Products</a></li>
+          <li><a href="" class="text-gray-400 hover:text-white transition">Different Categories</a></li>
+          <li><a href="" class="text-gray-400 hover:text-white transition">Cash On Delivery</a></li>
+          <li><a href="" class="text-gray-400 hover:text-white transition">Online Payment</a></li>
         </ul>
       </div>
 
@@ -159,10 +66,10 @@
       <div class="space-y-4">
         <h3 class="text-lg font-semibold">Contact Us</h3>
         <address class="not-italic text-gray-400">
-          <p>123 Business Ave</p>
-          <p>San Francisco, CA 94107</p>
-          <p class="mt-2">Email: <a href="mailto:info@company.com" class="hover:text-white transition">info@company.com</a></p>
-          <p>Phone: <a href="tel:+11234567890" class="hover:text-white transition">+1 (123) 456-7890</a></p>
+          <p>123, Temple rd</p>
+          <p>Katunayake</p>
+          <p class="mt-2">Email: <a href="mailto:contact@onmarket.com" class="hover:text-white transition">contact@onmarket.com</a></p>
+          <p>Phone: <a href="tel:011-2252525" class="hover:text-white transition">011-2252525</a></p>
         </address>
       </div>
     </div>

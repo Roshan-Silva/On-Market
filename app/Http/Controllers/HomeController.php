@@ -56,6 +56,7 @@ class HomeController extends Controller
 
     public function login_home(){
         $product = Product::all();
+        $categories = Category::all();
         if(Auth::id()){
             $user = Auth::User();
             $userid = $user->id;
@@ -64,7 +65,7 @@ class HomeController extends Controller
         else{
             $count = "";
         }
-        return view('home.index',compact('product','count'));
+        return view('home.index',compact('product','count','categories'));
     }
 
     public function product_details($id){
