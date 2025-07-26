@@ -5,10 +5,8 @@
             <h1 class="text-4xl font-bold text-primary-800 dark:text-white mb-8 animate-bounce-slow">Product Categories</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               @foreach ($categories as $category)
-                <!-- Category Cards with Enhanced Design -->
+                
                 <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl relative text-sm">
-
-                  <!-- Image -->
                   <div class="aspect-w-1 aspect-h-1">
                     <img src="images/{{ $category->image }}" alt="image" class="w-full object-cover rounded-t-xl">
                     <div class="mt-3 flex justify-center">

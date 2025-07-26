@@ -20,7 +20,7 @@
 
     
 
-    <h1>Laravel 9 - Stripe Payment Gateway Integration Example <br/> ItSolutionStuff.com</h1>
+    <h1>Stripe Payment Gateway Integration</h1>
 
     
 
@@ -34,7 +34,7 @@
 
                         <h3 class="panel-title" >Payment Details</h3>
 
-                        <h4>You need to pay {{$value}}</h4>
+                        <h4>You need to pay {{$value}}$</h4>
 
                 </div>
 

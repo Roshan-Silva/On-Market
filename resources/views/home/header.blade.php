@@ -7,12 +7,11 @@
 
 <nav class="bg-gray-800 text-white">
   <div class="flex justify-between items-center px-6 py-6 md:py-8 relative">
-    <!-- Brand -->
+
     <div class="text-3xl font-bold">
       On Market
     </div>
 
-    <!-- Desktop Menu -->
     <div class="hidden lg:flex space-x-6 items-center">
       <a href="{{ url('/dashboard') }}" class="hover:text-blue-300 transition">Home</a>
       <a href="{{ url('shop') }}" class="hover:text-blue-300 transition">Shop</a>
@@ -36,7 +35,7 @@
       @endauth
     </div>
 
-    <!-- Hamburger for Mobile -->
+
     <div class="lg:hidden">
       <button onclick="toggleMenu()" class="focus:outline-none">
         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
@@ -48,7 +47,7 @@
     </div>
   </div>
 
-  <!-- Mobile Sidebar Menu -->
+
   <div id="mobile-menu"
     class="fixed top-0 right-0 h-full w-64 bg-gray-900 transform translate-x-full transition-transform duration-300 z-50">
     <div class="p-6 space-y-6">

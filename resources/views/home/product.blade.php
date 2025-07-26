@@ -1,10 +1,5 @@
 <section class="shop_section layout_padding">
     <div class="container">
-      {{-- <div class="heading_container heading_center">
-        <h2>
-          Latest Products
-        </h2>
-      </div> --}}
       <div class="relative bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-bold text-primary-800 dark:text-white mb-8 animate-bounce-slow">Latest Products</h1>
@@ -12,12 +7,11 @@
               @foreach ($product as $products)
                 <!-- Product Cards with Enhanced Design -->
                 <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl relative text-sm">
-                  <!-- "New" badge -->
+
                   <span class="absolute top-2 right-2 bg-primary-100 text-primary-800 text-[10px] font-medium px-2 py-0.5 rounded-full shadow">
                     New
                   </span>
 
-                  <!-- Image -->
                   <div class="aspect-w-1 aspect-h-1">
                     <img src="products/{{ $products->image }}" alt="image" class="w-full object-cover rounded-t-xl">
                   </div>

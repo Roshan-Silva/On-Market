@@ -3,8 +3,6 @@
 
             
 <head>
-    {{-- @include('home.css')
-    <style>
         table {
           font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
           border-collapse: separate;
@@ -79,40 +77,9 @@
 
 <body>
   <div class="hero_area">
-  <!-- header section strats -->
 
     @include('home.header')
 
-
-
-  <!-- end header section -->
-
-  {{-- <table>
-    <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Phone</th>
-        <th>Product Title</th>
-        <th>Price</th>
-        <th>Image</th>
-        <th>Status</th>
-    </tr>
-    
-    
-  @foreach ($order as $orders)
-    <tr>
-    <td>{{ $orders->name }}</td>
-    <td>{{ $orders->rec_address }}</td>
-    <td>{{ $orders->phone }}</td>
-    <td>{{ $orders->product->title }}</td>
-    <td>{{ $orders->product->price }}</td>
-    
-    <td><img width="300" height="250" src="{{ asset('products/'.$orders->product->image) }}" alt=""></td>
-    <td>{{ $orders->status }}</td>
-
-    </tr>
-  @endforeach
-  </table> --}}
  @foreach ($order->sortByDesc('created_at') as $orders)
     
   
@@ -134,7 +101,6 @@
                   @endforeach
                     <div class="border-b border-gray-200 md:flex-row flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
                         <div class="w-full flex flex-col justify-start items-start space-y-8">
-                            {{-- <h5 class="text-xl dark:text-white xl:text-2xl font-semibold leading-6 text-gray-800">Premium Quaility Dress</h5> --}}
                             <div class="flex justify-start items-start flex-col space-y-2">
                                 <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-800 text-gray-800 font-bold">Ship to: </span> {{$orders->rec_address}}</p>
                                 <p class="text-sm dark:text-white leading-none text-gray-800"><span class="dark:text-gray-800 text-gray-800 font-bold">Order status: </span>{{$orders->status}} </p>
@@ -143,8 +109,6 @@
                         </div>
                         <div class="flex justify-between space-x-6 items-start w-full">
                             <p class="text-base dark:text-white xl:text-lg leading-6 font-bold">Total Price: <span class="text-base dark:text-white xl:text-lg leading-6"> {{$orders->total}}$</span></p>
-                            {{-- <p class="text-base dark:text-white xl:text-lg leading-6 text-gray-800">01</p>
-                            <p class="text-base dark:text-white xl:text-lg font-semibold leading-6 text-gray-800">{{$orders->total}}</p> --}}
                         </div>
                     </div>
                 </div>
@@ -154,10 +118,7 @@
   </div>
 
   @endforeach
-          
-
-
-  <!-- info section -->
+        
 
     @include('home.footer')
 
